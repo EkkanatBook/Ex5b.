@@ -38,14 +38,16 @@
 			   var t = $('#temp').val();//celsius
 			   var u = $('#unit').val();
 			   
-				var check = validation(t,u);
-				if(check!=null)return check;
-				var check2 =Temperature_conversion(t,u)
-				if(check!=null)return check2;
+				
 			   
 			   var t1;
 			   var u1;
-			   
+			   var check2 =Temperature_conversion(t,u)
+				if(check!=null)return check2;
+			 
+			   var check = validation(t,u);
+				if(check!=null)return check;
+				
 			 
 			});
 		});
@@ -60,6 +62,7 @@
 					alert(msg);
 					return;
 		}
+				document.getElementById("result").innerHTML = "Tempurature is "+t1+" in "+ u1;
 			
 			   }
 			   function  Temperature_conversion(t,u){
@@ -74,7 +77,7 @@
 					u1 = "Kelvin";
 			   }
 			   
-			   alert("Temperature is "+t1+" in "+u1);
+			   
 			   }
 	</script>
 </body>
